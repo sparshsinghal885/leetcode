@@ -9,11 +9,12 @@ public:
         for(auto& ch : s){
             count[ch-'a']++;
         }
-        solve("", s, target, 0, false, count);
+        string curr = "";
+        solve(curr , s, target, 0, false, count);
         return res;
     }
 
-    bool solve(string curr, string& s, string& target, int i, bool greater, vector<int>& count){
+    bool solve(string& curr, string& s, string& target, int i, bool greater, vector<int>& count){
         if(i == n){
             if(greater){
                 res = curr;
